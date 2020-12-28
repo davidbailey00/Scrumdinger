@@ -16,6 +16,7 @@ struct ScrumsView: View {
                 CardView(scrum: scrum)
                     .listRowBackground(scrum.color)
             }
+            .listRowInsets(EdgeInsets())
         }
     }
 }

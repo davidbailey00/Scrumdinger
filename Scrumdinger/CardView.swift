@@ -21,7 +21,6 @@ struct CardView: View {
                     .accessibilityValue("\(scrum.attendees.count)")
                 Spacer()
                 Label("\(scrum.lengthInMinutes)", systemImage: "clock")
-                    .padding(.trailing, 20)
                     .accessibilityElement(children: .ignore)
                     .accessibilityLabel(Text("Meeting length"))
                     .accessibilityValue(Text("\(scrum.lengthInMinutes) minutes"))
