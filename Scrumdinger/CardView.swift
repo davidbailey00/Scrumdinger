@@ -16,18 +16,18 @@ struct CardView: View {
             Spacer()
             HStack {
                 Label("\(scrum.attendees.count)", systemImage: "person.3")
+                    .padding(.trailing)
                     .accessibilityElement(children: .ignore)
                     .accessibilityLabel(Text("Attendees"))
                     .accessibilityValue("\(scrum.attendees.count)")
-                Spacer()
-                Label("\(scrum.lengthInMinutes)", systemImage: "clock")
+                Label("\(scrum.lengthInMinutes) min", systemImage: "clock")
                     .accessibilityElement(children: .ignore)
                     .accessibilityLabel(Text("Meeting length"))
                     .accessibilityValue(Text("\(scrum.lengthInMinutes) minutes"))
+                Spacer()
             }
             .font(.caption)
         }
-        .padding()
         .foregroundColor(scrum.color.accessibleFontColor)
     }
 }
