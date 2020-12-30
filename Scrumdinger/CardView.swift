@@ -35,8 +35,11 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     static var scrum = DailyScrum.data[0]
     static var previews: some View {
-        CardView(scrum: scrum)
-            .background(scrum.color)
-            .previewLayout(.fixed(width: 400, height: 60))
+        VStack {
+            CardView(scrum: scrum)
+                .padding()
+        }
+        .background(scrum.color)
+        .previewLayout(.fixed(width: 400, height: 60))
     }
 }
