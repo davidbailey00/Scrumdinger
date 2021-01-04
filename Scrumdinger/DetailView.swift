@@ -44,10 +44,10 @@ struct DetailView: View {
             presentEditView = true
         })
         .navigationTitle(scrum.title)
-        .fullScreenCover(isPresented: $presentEditView) {
+        .sheet(isPresented: $presentEditView) {
             NavigationView {
                 EditView()
-                    .navigationTitle(scrum.title)
+                    .navigationTitle("Edit \"\(scrum.title)\"")
                     .navigationBarItems(leading: Button("Cancel") {
                         presentEditView = false
                     }, trailing: Button("Done") {
