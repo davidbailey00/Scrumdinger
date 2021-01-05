@@ -11,6 +11,7 @@
 		63636F232595F48800C4416C /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63636F222595F48800C4416C /* MeetingView.swift */; };
 		63636F252595F48900C4416C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63636F242595F48900C4416C /* Assets.xcassets */; };
 		63636F282595F48900C4416C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63636F272595F48900C4416C /* Preview Assets.xcassets */; };
+		63AD533D259F5A1B003EB59D /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AD533C259F5A1B003EB59D /* EditView.swift */; };
 		63B62E792598C7F9008600BE /* DailyScrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B62E782598C7F9008600BE /* DailyScrum.swift */; };
 		63B62E7D2598C98F008600BE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B62E7C2598C98F008600BE /* CardView.swift */; };
 		63B62E812598CC1E008600BE /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B62E802598CC1E008600BE /* Color+Codable.swift */; };
@@ -25,6 +26,7 @@
 		63636F242595F48900C4416C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63636F272595F48900C4416C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		63636F292595F48900C4416C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63AD533C259F5A1B003EB59D /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		63B62E782598C7F9008600BE /* DailyScrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScrum.swift; sourceTree = "<group>"; };
 		63B62E7C2598C98F008600BE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		63B62E802598CC1E008600BE /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				63B62E7C2598C98F008600BE /* CardView.swift */,
 				63F9E91D259A975700257AD7 /* ScrumsView.swift */,
 				63C2055A259CB300001536A0 /* DetailView.swift */,
+				63AD533C259F5A1B003EB59D /* EditView.swift */,
 			);
 			path = Scrumdinger;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			files = (
 				63636F232595F48800C4416C /* MeetingView.swift in Sources */,
 				63F9E91E259A975700257AD7 /* ScrumsView.swift in Sources */,
+				63AD533D259F5A1B003EB59D /* EditView.swift in Sources */,
 				63B62E792598C7F9008600BE /* DailyScrum.swift in Sources */,
 				63C2055B259CB300001536A0 /* DetailView.swift in Sources */,
 				63B62E7D2598C98F008600BE /* CardView.swift in Sources */,
@@ -297,6 +301,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Scrumdinger/Preview Content\"";
+				DEVELOPMENT_TEAM = W98EPVCR8B;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Scrumdinger/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -318,6 +323,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Scrumdinger/Preview Content\"";
+				DEVELOPMENT_TEAM = W98EPVCR8B;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Scrumdinger/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
