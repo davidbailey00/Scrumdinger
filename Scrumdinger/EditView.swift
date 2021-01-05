@@ -56,6 +56,7 @@ struct EditView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             EditView(scrumData: .constant(DailyScrum.data[0].data))
+                .navigationTitle("Edit Scrum")
         }
     }
 }
