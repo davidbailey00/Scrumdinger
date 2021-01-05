@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Typographizer",
+        "repositoryURL": "https://github.com/frankrausch/Typographizer",
+        "state": {
+          "branch": null,
+          "revision": "3a16acdc8733bf1e975d6d9f5a52d53faaf7d3bb",
+          "version": "1.0.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

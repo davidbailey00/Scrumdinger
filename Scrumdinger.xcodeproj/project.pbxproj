@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		63B62E7D2598C98F008600BE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B62E7C2598C98F008600BE /* CardView.swift */; };
 		63B62E812598CC1E008600BE /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B62E802598CC1E008600BE /* Color+Codable.swift */; };
 		63C2055B259CB300001536A0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2055A259CB300001536A0 /* DetailView.swift */; };
+		63F071EC25A4C4A500FE28A8 /* Typographizer in Frameworks */ = {isa = PBXBuildFile; productRef = 63F071EB25A4C4A500FE28A8 /* Typographizer */; };
 		63F9E91E259A975700257AD7 /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F9E91D259A975700257AD7 /* ScrumsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63F071EC25A4C4A500FE28A8 /* Typographizer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +113,9 @@
 			dependencies = (
 			);
 			name = Scrumdinger;
+			packageProductDependencies = (
+				63F071EB25A4C4A500FE28A8 /* Typographizer */,
+			);
 			productName = Scrumdinger;
 			productReference = 63636F1D2595F48800C4416C /* Scrumdinger.app */;
 			productType = "com.apple.product-type.application";
@@ -138,6 +143,9 @@
 				Base,
 			);
 			mainGroup = 63636F142595F48800C4416C;
+			packageReferences = (
+				63F071EA25A4C4A500FE28A8 /* XCRemoteSwiftPackageReference "Typographizer" */,
+			);
 			productRefGroup = 63636F1E2595F48800C4416C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -360,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		63F071EA25A4C4A500FE28A8 /* XCRemoteSwiftPackageReference "Typographizer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/frankrausch/Typographizer";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63F071EB25A4C4A500FE28A8 /* Typographizer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63F071EA25A4C4A500FE28A8 /* XCRemoteSwiftPackageReference "Typographizer" */;
+			productName = Typographizer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 63636F152595F48800C4416C /* Project object */;
 }

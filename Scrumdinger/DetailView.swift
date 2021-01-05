@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Typographizer
 
 struct DetailView: View {
     @Binding var scrum: DailyScrum
@@ -50,7 +51,7 @@ struct DetailView: View {
         .sheet(isPresented: $presentEditView) {
             NavigationView {
                 EditView(scrumData: $data)
-                    .navigationTitle("Edit \"\(scrum.title)\"")
+                    .navigationTitle("Edit \"\(scrum.title)\"".typographized(language: "en"))
                     .navigationBarItems(leading: Button("Cancel") {
                         presentEditView = false
                     }, trailing: Button("Done") {
