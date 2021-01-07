@@ -18,6 +18,8 @@
 		63C1F2E525A79C5500FBC78B /* MeetingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C1F2E425A79C5500FBC78B /* MeetingHeaderView.swift */; };
 		63C1F2E825A7A5F600FBC78B /* ScrumTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C1F2E725A7A5F600FBC78B /* ScrumTimer.swift */; };
 		63C1F2EB25A7BF2D00FBC78B /* MeetingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C1F2EA25A7BF2D00FBC78B /* MeetingFooterView.swift */; };
+		63C1F2EF25A7C55E00FBC78B /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 63C1F2EE25A7C55E00FBC78B /* ding.wav */; };
+		63C1F2F225A7C75500FBC78B /* AVPlayer+Ding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C1F2F125A7C75500FBC78B /* AVPlayer+Ding.swift */; };
 		63C2055B259CB300001536A0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2055A259CB300001536A0 /* DetailView.swift */; };
 		63F071EC25A4C4A500FE28A8 /* Typographizer in Frameworks */ = {isa = PBXBuildFile; productRef = 63F071EB25A4C4A500FE28A8 /* Typographizer */; };
 		63F9E91E259A975700257AD7 /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F9E91D259A975700257AD7 /* ScrumsView.swift */; };
@@ -37,6 +39,8 @@
 		63C1F2E425A79C5500FBC78B /* MeetingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingHeaderView.swift; sourceTree = "<group>"; };
 		63C1F2E725A7A5F600FBC78B /* ScrumTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumTimer.swift; sourceTree = "<group>"; };
 		63C1F2EA25A7BF2D00FBC78B /* MeetingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingFooterView.swift; sourceTree = "<group>"; };
+		63C1F2EE25A7C55E00FBC78B /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ding.wav; path = ../../../../Downloads/Misc/ManagingStateAndLifeCycle/StartingPoint/Scrumdinger/Resources/ding.wav; sourceTree = "<group>"; };
+		63C1F2F125A7C75500FBC78B /* AVPlayer+Ding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Ding.swift"; sourceTree = "<group>"; };
 		63C2055A259CB300001536A0 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		63F9E91D259A975700257AD7 /* ScrumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +76,7 @@
 		63636F1F2595F48800C4416C /* Scrumdinger */ = {
 			isa = PBXGroup;
 			children = (
+				63C1F2ED25A7C4A100FBC78B /* Resources */,
 				63B62E7B2598C937008600BE /* Models */,
 				63636F202595F48800C4416C /* ScrumdingerApp.swift */,
 				63636F222595F48800C4416C /* MeetingView.swift */,
@@ -102,8 +107,17 @@
 				63B62E782598C7F9008600BE /* DailyScrum.swift */,
 				63B62E802598CC1E008600BE /* Color+Codable.swift */,
 				63C1F2E725A7A5F600FBC78B /* ScrumTimer.swift */,
+				63C1F2F125A7C75500FBC78B /* AVPlayer+Ding.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		63C1F2ED25A7C4A100FBC78B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				63C1F2EE25A7C55E00FBC78B /* ding.wav */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63C1F2EF25A7C55E00FBC78B /* ding.wav in Resources */,
 				63636F282595F48900C4416C /* Preview Assets.xcassets in Resources */,
 				63636F252595F48900C4416C /* Assets.xcassets in Resources */,
 			);
@@ -188,6 +203,7 @@
 				63C1F2E825A7A5F600FBC78B /* ScrumTimer.swift in Sources */,
 				63B62E792598C7F9008600BE /* DailyScrum.swift in Sources */,
 				63C1F2EB25A7BF2D00FBC78B /* MeetingFooterView.swift in Sources */,
+				63C1F2F225A7C75500FBC78B /* AVPlayer+Ding.swift in Sources */,
 				63C2055B259CB300001536A0 /* DetailView.swift in Sources */,
 				63B62E7D2598C98F008600BE /* CardView.swift in Sources */,
 				63B62E812598CC1E008600BE /* Color+Codable.swift in Sources */,
