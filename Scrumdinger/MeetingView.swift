@@ -37,11 +37,14 @@ struct MeetingView: View {
         .onDisappear {
             scrumTimer.stopScrum()
         }
+        .navigationTitle("\(scrum.title) Meeting")
     }
 }
 
 struct MeetingView_Previews: PreviewProvider {
     static var previews: some View {
-        MeetingView(scrum: .constant(DailyScrum.data[0]), scrumTimer: DailyScrum.data[2].timer)
+        NavigationView {
+            MeetingView(scrum: .constant(DailyScrum.data[0]), scrumTimer: DailyScrum.data[0].timer)
+        }
     }
 }
