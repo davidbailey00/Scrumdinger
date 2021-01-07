@@ -9,29 +9,13 @@ import SwiftUI
 
 struct MeetingView: View {
     @Binding var scrum: DailyScrum
+    @StateObject var scrumTimer: ScrumTimer
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16)
                 .fill(scrum.color)
             VStack {
-                ProgressView(value: 5, total: 15)
-                    .progressViewStyle(LinearProgressViewStyle(tint: scrum.color.accessibleFontColor))
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("Seconds Elapsed")
-                            .font(.caption)
-                        Label("300", systemImage: "hourglass.bottomhalf.fill")
-                    }
-                    Spacer()
-                    VStack(alignment: .trailing) {
-                        Text("Seconds Remaining")
-                            .font(.caption)
-                        Label("600", systemImage: "hourglass.tophalf.fill")
-                    }
-                }
-                .accessibilityElement(children: .ignore)
-                .accessibilityLabel(Text("Time remaining"))
-                .accessibilityValue(Text("10 minutes"))
+                MeetingHeaderView(secondsElapsed: $scrumTimer.secondsElapsed, secondsRemaining: $scrumTimer.secondsRemaining)
                 Circle()
                     .strokeBorder(lineWidth: 24, antialiased: true)
                 HStack {
@@ -44,14 +28,21 @@ struct MeetingView: View {
                 }
             }
             .foregroundColor(scrum.color.accessibleFontColor)
+            .progressViewStyle(LinearProgressViewStyle(tint: scrum.color.accessibleFontColor))
             .padding()
         }
         .padding()
+        .onAppear {
+            scrumTimer.startScrum()
+        }
+        .onDisappear {
+            scrumTimer.stopScrum()
+        }
     }
 }
 
 struct MeetingView_Previews: PreviewProvider {
     static var previews: some View {
-        MeetingView(scrum: .constant(DailyScrum.data[0]))
+        MeetingView(scrum: .constant(DailyScrum.data[0]), scrumTimer: DailyScrum.data[2].timer)
     }
 }
