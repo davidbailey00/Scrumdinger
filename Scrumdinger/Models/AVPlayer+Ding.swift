@@ -5,8 +5,8 @@
 //  Created by David Bailey on 07/01/2021.
 //
 
-import Foundation
 import AVFoundation
+import Foundation
 
 extension AVPlayer {
     static let sharedDingPlayer: AVPlayer = {

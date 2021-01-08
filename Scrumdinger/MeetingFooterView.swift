@@ -15,14 +15,17 @@ struct MeetingFooterView: View {
         guard let index = speakers.firstIndex(where: { !$0.isCompleted }) else { return nil }
         return index + 1
     }
+
     private var isLastSpeaker: Bool {
         return speakers.dropLast().allSatisfy { $0.isCompleted }
     }
+
     private var speakerText: String {
         guard let speakerNumber = speakerNumber,
               let activeSpeaker = activeSpeaker else { return "No more speakers" }
         return "Speaker \(speakerNumber) of \(speakers.count): \(activeSpeaker)"
     }
+
     var body: some View {
         HStack {
             Text(speakerText)

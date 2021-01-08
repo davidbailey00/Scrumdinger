@@ -5,8 +5,8 @@
 //  Created by David Bailey on 25/12/2020.
 //
 
-import SwiftUI
 import AVFoundation
+import SwiftUI
 
 struct MeetingView: View {
     @Binding var scrum: DailyScrum

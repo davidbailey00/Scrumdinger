@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 /// Keeps time for a daily scrum meeting. Keep track of the total meeting time, the time for each speaker, and the name of the current speaker.
 class ScrumTimer: ObservableObject {
     /// A struct to keep track of meeting attendees during a meeting.
@@ -19,6 +18,7 @@ class ScrumTimer: ObservableObject {
         /// Id for Identifiable conformance.
         let id = UUID()
     }
+
     /// The name of the meeting attendee who is speaking.
     @Published var activeSpeaker: String? = nil
     /// The number of seconds since the beginning of the meeting.
@@ -40,6 +40,7 @@ class ScrumTimer: ObservableObject {
     private var secondsPerSpeaker: Int {
         (lengthInMinutes * 60) / speakers.count
     }
+
     private var secondsElapsedForSpeaker: Int = 0
     private var speakerIndex: Int = 0
     private var startDate: Date?
@@ -54,22 +55,25 @@ class ScrumTimer: ObservableObject {
      */
     init(lengthInMinutes: Int = 0, attendees: [String] = []) {
         self.lengthInMinutes = lengthInMinutes
-        self.speakers = attendees.isEmpty ?
+        speakers = attendees.isEmpty ?
             [Speaker(name: "Player 1", isCompleted: false)] :
             attendees.map { Speaker(name: $0, isCompleted: false) }
         secondsRemaining = lengthInSeconds
         activeSpeaker = speakers.isEmpty ? nil : speakers[0].name
     }
+
     /// Start the timer.
     func startScrum() {
         changeToSpeaker(at: 0)
     }
+
     /// Stop the timer.
     func stopScrum() {
         timer?.invalidate()
         timer = nil
         timerStopped = true
     }
+
     /// Advance the timer to the next speaker.
     func skipSpeaker() {
         changeToSpeaker(at: speakerIndex + 1)
@@ -88,7 +92,7 @@ class ScrumTimer: ObservableObject {
         secondsElapsed = index * secondsPerSpeaker
         secondsRemaining = lengthInSeconds - secondsElapsed
         startDate = Date()
-        timer = Timer.scheduledTimer(withTimeInterval: frequency, repeats: true) { [weak self] timer in
+        timer = Timer.scheduledTimer(withTimeInterval: frequency, repeats: true) { [weak self] _ in
             if let self = self, let startDate = self.startDate {
                 let secondsElapsed = Date().timeIntervalSince1970 - startDate.timeIntervalSince1970
                 self.update(secondsElapsed: Int(secondsElapsed))

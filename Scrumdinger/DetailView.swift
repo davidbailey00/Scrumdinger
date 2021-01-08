@@ -10,7 +10,7 @@ import Typographizer
 
 struct DetailView: View {
     @Binding var scrum: DailyScrum
-    @State private var data: DailyScrum.Data = DailyScrum.Data()
+    @State private var data = DailyScrum.Data()
     @State private var presentEditView = false
 
     var body: some View {
@@ -35,7 +35,7 @@ struct DetailView: View {
                 }
             }
             Section(header: Text("Attendees")) {
-                ForEach(scrum.attendees, id: \.self) {attendee in
+                ForEach(scrum.attendees, id: \.self) { attendee in
                     Label(attendee, systemImage: "person")
                         .accessibilityLabel(Text("Person"))
                         .accessibilityValue(Text(attendee))

@@ -13,6 +13,7 @@ struct MeetingHeaderView: View {
     private var progress: Double {
         return Double(secondsElapsed) / Double(secondsElapsed + secondsRemaining)
     }
+
     var body: some View {
         VStack {
             ProgressView(value: progress)
