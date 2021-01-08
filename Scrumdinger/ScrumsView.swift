@@ -25,11 +25,14 @@ struct ScrumsView: View {
             }
         }
         .navigationTitle("Daily Scrums")
-        .navigationBarItems(trailing: Button(action: {
-            presentEditView = true
-        }) {
-            Image(systemName: "plus")
-        })
+        .navigationBarItems(
+            trailing: Button(action: {
+                presentEditView = true
+            }) {
+                Image(systemName: "plus")
+            }
+            .accessibilityLabel(Text("New scrum"))
+        )
         .sheet(isPresented: $presentEditView) {
             NavigationView {
                 EditView(scrumData: $newScrumData)
