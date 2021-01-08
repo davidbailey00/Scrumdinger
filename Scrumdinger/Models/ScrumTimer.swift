@@ -20,13 +20,13 @@ class ScrumTimer: ObservableObject {
         let id = UUID()
     }
     /// The name of the meeting attendee who is speaking.
-    var activeSpeaker = ""
+    @Published var activeSpeaker: String? = nil
     /// The number of seconds since the beginning of the meeting.
-    var secondsElapsed = 0
+    @Published var secondsElapsed = 0
     /// The number of seconds until all attendees have had a turn to speak.
     @Published var secondsRemaining = 0
     /// All meeting attendees, listed in the order they will speak.
-    var speakers: [Speaker] = []
+    @Published var speakers: [Speaker] = []
 
     /// The scrum meeting length.
     var lengthInMinutes: Int
@@ -42,9 +42,6 @@ class ScrumTimer: ObservableObject {
     }
     private var secondsElapsedForSpeaker: Int = 0
     private var speakerIndex: Int = 0
-    private var speakerText: String {
-        return "Speaker \(speakerIndex + 1): " + speakers[speakerIndex].name
-    }
     private var startDate: Date?
 
     /**
@@ -61,7 +58,7 @@ class ScrumTimer: ObservableObject {
             [Speaker(name: "Player 1", isCompleted: false)] :
             attendees.map { Speaker(name: $0, isCompleted: false) }
         secondsRemaining = lengthInSeconds
-        activeSpeaker = speakerText
+        activeSpeaker = speakers.isEmpty ? nil : speakers[0].name
     }
     /// Start the timer.
     func startScrum() {
@@ -86,7 +83,7 @@ class ScrumTimer: ObservableObject {
         secondsElapsedForSpeaker = 0
         guard index < speakers.count else { return }
         speakerIndex = index
-        activeSpeaker = speakerText
+        activeSpeaker = speakers[speakerIndex].name
 
         secondsElapsed = index * secondsPerSpeaker
         secondsRemaining = lengthInSeconds - secondsElapsed

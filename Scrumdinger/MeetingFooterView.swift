@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MeetingFooterView: View {
     @Binding var speakers: [ScrumTimer.Speaker]
+    @Binding var activeSpeaker: String?
     var skipAction: () -> Void
     private var speakerNumber: Int? {
         guard let index = speakers.firstIndex(where: { !$0.isCompleted }) else { return nil }
@@ -18,8 +19,9 @@ struct MeetingFooterView: View {
         return speakers.dropLast().allSatisfy { $0.isCompleted }
     }
     private var speakerText: String {
-        guard let speakerNumber = speakerNumber else { return "No more speakers" }
-        return "Speaker \(speakerNumber) of \(speakers.count)"
+        guard let speakerNumber = speakerNumber,
+              let activeSpeaker = activeSpeaker else { return "No more speakers" }
+        return "Speaker \(speakerNumber) of \(speakers.count): \(activeSpeaker)"
     }
     var body: some View {
         HStack {
@@ -35,8 +37,9 @@ struct MeetingFooterView: View {
 
 struct MeetingFooterView_Previews: PreviewProvider {
     static var speakers = DailyScrum.data[0].timer.speakers
+    static var activeSpeaker = DailyScrum.data[0].timer.activeSpeaker
     static var previews: some View {
-        MeetingFooterView(speakers: .constant(speakers), skipAction: {})
+        MeetingFooterView(speakers: .constant(speakers), activeSpeaker: .constant(activeSpeaker), skipAction: {})
             .previewLayout(.sizeThatFits)
     }
 }

@@ -11,7 +11,7 @@ struct MeetingHeaderView: View {
     @Binding var secondsElapsed: Int
     @Binding var secondsRemaining: Int
     private var progress: Double {
-        return Double(secondsElapsed) / Double(secondsElapsed + secondsRemaining);
+        return Double(secondsElapsed) / Double(secondsElapsed + secondsRemaining)
     }
     var body: some View {
         VStack {

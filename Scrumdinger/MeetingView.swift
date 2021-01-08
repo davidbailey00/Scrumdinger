@@ -20,7 +20,7 @@ struct MeetingView: View {
                 MeetingHeaderView(secondsElapsed: $scrumTimer.secondsElapsed, secondsRemaining: $scrumTimer.secondsRemaining)
                 Circle()
                     .strokeBorder(lineWidth: 24, antialiased: true)
-                MeetingFooterView(speakers: $scrumTimer.speakers, skipAction: scrumTimer.skipSpeaker)
+                MeetingFooterView(speakers: $scrumTimer.speakers, activeSpeaker: $scrumTimer.activeSpeaker, skipAction: scrumTimer.skipSpeaker)
             }
             .foregroundColor(scrum.color.accessibleFontColor)
             .progressViewStyle(LinearProgressViewStyle(tint: scrum.color.accessibleFontColor))
@@ -44,7 +44,7 @@ struct MeetingView: View {
 struct MeetingView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            MeetingView(scrum: .constant(DailyScrum.data[0]), scrumTimer: DailyScrum.data[0].timer)
+            MeetingView(scrum: .constant(DailyScrum.data[0]), scrumTimer: DailyScrum.data[2].timer)
         }
     }
 }
